@@ -1,12 +1,18 @@
-const submitTitle = document.getElementById('submitTitle');
-const filmTitle = document.getElementById('filmTitle');
-const films = document.getElementById('films');
+const form = document.querySelector("#film");
+const input = document.querySelector("#filmTitle");
+const list = document.querySelector("#filmList");
 
-function writeList() {
-    films.innerHTML = filmTitle.value;
-}
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const filmName = input.value;
+    const newLI = document.createElement("LI");
+    newLI.innerText = filmName;
+    list.append(newLI);
+});
 
-submitTitle.addEventListener('click', writeList);
+
+
+
 
 
 
